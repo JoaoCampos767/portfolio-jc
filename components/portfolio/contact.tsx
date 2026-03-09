@@ -1,39 +1,39 @@
-"use client"
+"use client";
 
-import { Github, Linkedin, Mail, Send } from "lucide-react"
-import Link from "next/link"
-import { useEffect, useRef, useState } from "react"
+import { Github, Linkedin, Mail, Send } from "lucide-react";
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 
 export function Contact() {
-  const sectionRef = useRef<HTMLElement>(null)
-  const [isVisible, setIsVisible] = useState(false)
+  const sectionRef = useRef<HTMLElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true)
+          setIsVisible(true);
         }
       },
-      { threshold: 0.2 }
-    )
+      { threshold: 0.2 },
+    );
 
     if (sectionRef.current) {
-      observer.observe(sectionRef.current)
+      observer.observe(sectionRef.current);
     }
 
-    return () => observer.disconnect()
-  }, [])
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section id="contact" ref={sectionRef} className="py-24 md:py-32">
       <div className="container mx-auto px-6">
         <div className="max-w-2xl mx-auto text-center">
           {/* Section Title */}
-          <div
-            className={`opacity-0 ${isVisible ? "animate-fade-up" : ""}`}
-          >
-            <span className="text-primary font-mono text-sm">04. O que vem a seguir?</span>
+          <div className={`opacity-0 ${isVisible ? "animate-fade-up" : ""}`}>
+            <span className="text-primary font-mono text-sm">
+              05. O que vem a seguir?
+            </span>
           </div>
 
           <h2
@@ -45,8 +45,8 @@ export function Contact() {
           <p
             className={`text-muted-foreground leading-relaxed mb-10 opacity-0 ${isVisible ? "animate-fade-up animation-delay-200" : ""}`}
           >
-            Estou sempre aberto a novas oportunidades e projetos interessantes. 
-            Se você tem uma ideia que gostaria de discutir ou simplesmente quer 
+            Estou sempre aberto a novas oportunidades e projetos interessantes.
+            Se você tem uma ideia que gostaria de discutir ou simplesmente quer
             bater um papo, ficarei feliz em conversar!
           </p>
 
@@ -96,5 +96,5 @@ export function Contact() {
         </div>
       </div>
     </section>
-  )
+  );
 }

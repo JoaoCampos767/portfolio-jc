@@ -4,28 +4,31 @@ import { useEffect, useRef, useState } from "react"
 
 const experiences = [
   {
-    period: "2024 — Presente",
+    period: "Mai 2025 — Atual",
+    title: "Desenvolvedor Full Stack Pleno",
+    company: "Futura Sistemas",
+    location: "Santa Bárbara d'Oeste – SP",
+    description:
+      "Desenvolvimento e manutenção de aplicações web, criação de funcionalidades front-end e back-end, integração com APIs e serviços externos, e otimização de performance com melhoria contínua.",
+    skills: ["React", "Next.js", "Node.js", "TypeScript", "APIs REST"],
+  },
+  {
+    period: "Ago 2020 — Abr 2025",
     title: "Desenvolvedor Full Stack",
-    company: "Freelancer",
+    company: "MBM Solutions",
+    location: "Americana – SP",
     description:
-      "Desenvolvimento de aplicações web completas, desde o design até a implementação. Trabalho com clientes para criar soluções personalizadas utilizando tecnologias modernas.",
-    skills: ["React", "Next.js", "Node.js", "TypeScript"],
+      "Desenvolvimento de aplicações web completas, construção de APIs com Node.js, interfaces modernas com React e participação em decisões técnicas e de arquitetura de software.",
+    skills: ["React", "Node.js", "JavaScript", "TypeScript", "SQL"],
   },
   {
-    period: "2023 — 2024",
-    title: "Desenvolvedor Front-end",
-    company: "Projetos Pessoais",
+    period: "Mar 2018 — Mar 2020",
+    title: "Desenvolvedor",
+    company: "N&C; Brasil",
+    location: "Americana – SP",
     description:
-      "Foco em desenvolvimento de interfaces modernas e responsivas. Criação de componentes reutilizáveis e implementação de boas práticas de acessibilidade.",
-    skills: ["JavaScript", "React", "Tailwind CSS", "Git"],
-  },
-  {
-    period: "2021 — 2023",
-    title: "Estudante de Programação",
-    company: "Autodidata",
-    description:
-      "Início da jornada na programação, aprendendo fundamentos de desenvolvimento web, lógica de programação e estruturas de dados através de cursos online e projetos práticos.",
-    skills: ["HTML", "CSS", "JavaScript", "Python"],
+      "Desenvolvimento e manutenção de sistemas internos, suporte e evolução de software corporativo.",
+    skills: ["JavaScript", "HTML", "CSS", "SQL"],
   },
 ]
 
@@ -88,6 +91,9 @@ export function Experience() {
                     {exp.title}{" "}
                     <span className="text-primary">· {exp.company}</span>
                   </h3>
+                  {exp.location && (
+                    <p className="text-xs text-muted-foreground/70 font-mono">{exp.location}</p>
+                  )}
                   <p className="text-muted-foreground leading-relaxed">
                     {exp.description}
                   </p>
