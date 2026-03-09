@@ -1,6 +1,7 @@
 "use client";
 
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -49,9 +50,14 @@ export function Navigation() {
               href="/"
               className="text-2xl font-bold hover:opacity-80 transition-opacity font-mono tracking-tighter"
             >
-              <span className="text-primary">&lt;</span>
-              <span className="text-foreground">JC</span>
-              <span className="text-primary"> /&gt;</span>
+              <Image
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                className="rounded-full"
+                src="/icon-light.png"
+                alt="Logo"
+                width={70}
+                height={70}
+              />
             </Link>
 
             {/* Desktop Navigation */}
